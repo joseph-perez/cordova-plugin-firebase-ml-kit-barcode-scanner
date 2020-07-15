@@ -14,6 +14,10 @@ exports.startScanning = function (p_OnSuccess, p_OnError, p_Settings) {
   return startScanning(p_OnSuccess, p_OnError, p_Settings);
 };
 
+exports.stopScanning = function(success, error) {
+  return stopScanning(success, error);
+};
+
 // ----------------------------------------------------------------------------
 // |  Functions
 // ----------------------------------------------------------------------------
@@ -83,4 +87,8 @@ function startScanning(p_OnSuccess, p_OnError, p_Settings) {
   exec(p_Result => {
     p_OnSuccess(p_Result[0]);
   }, p_OnError, 'cordova-plugin-firebase-ml-kit-barcode-scanner','startScan',settingArray);
+};
+
+function stopScanning(success, error) {
+  exec(success, error, 'cordova-plugin-firebase-ml-kit-barcode-scanner', 'stopScan');
 };

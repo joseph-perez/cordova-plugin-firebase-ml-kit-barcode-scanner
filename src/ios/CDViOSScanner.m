@@ -71,6 +71,16 @@
   
 }
 
+- (void) stopScan:(CDVInvokedUrlCommand *)command
+{
+  CDVPluginResult* pluginResult = nil;
+
+  [self.cameraViewController dismissViewControllerAnimated:NO completion:nil];
+  _scannerOpen = NO;
+  
+  [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
 -(void)sendResult:(NSString *)value
 {
   [self.cameraViewController dismissViewControllerAnimated:NO completion:nil];

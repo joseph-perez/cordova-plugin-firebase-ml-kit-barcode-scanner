@@ -18,5 +18,6 @@
 @property (nonatomic, retain) CameraViewController* cameraViewController;
 
 - (void) startScan:(CDVInvokedUrlCommand *)command;
+- (void) stopScan:(CDVInvokedUrlCommand *)command;
 
 @end
