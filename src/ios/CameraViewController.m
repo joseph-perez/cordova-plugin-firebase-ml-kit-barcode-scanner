@@ -104,7 +104,13 @@
 - (void)viewDidLayoutSubviews {
   [super viewDidLayoutSubviews];
   
-  self.previewLayer.frame = self.view.layer.bounds;
+  // self.previewLayer.frame = self.view.layer.bounds;
+  CGFloat viewPositionX = _viewPositionX;
+  CGFloat viewPositionY = _viewPositionY;
+  CGFloat viewWidth = _viewWidth;
+  CGFloat viewHeight = _viewHeight;
+
+  self.previewLayer.frame = CGRectMake(viewPositionX, viewPositionY, viewWidth, viewHeight);
   self.previewLayer.position = CGPointMake(CGRectGetMidX(self.previewLayer.frame),
                        CGRectGetMidY(self.previewLayer.frame));
 }
