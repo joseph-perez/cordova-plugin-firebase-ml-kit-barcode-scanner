@@ -65,6 +65,26 @@
       self.cameraViewController.viewPositionY = 0;
       self.cameraViewController.viewWidth = [[UIScreen mainScreen] bounds].size.width;
       self.cameraViewController.viewHeight = [[UIScreen mainScreen] bounds].size.height;
+
+      // view position x
+      if ([command argumentAtIndex:3]) {
+        self.cameraViewController.viewPositionX = (CGFloat)[[command argumentAtIndex:3] floatValue];
+      }
+
+      // view position y
+      if ([command argumentAtIndex:4]) {
+        self.cameraViewController.viewPositionY = (CGFloat)[[command argumentAtIndex:4] floatValue];
+      }
+
+      // view width
+      if ([command argumentAtIndex:5]) {
+        self.cameraViewController.viewWidth = (CGFloat)[[command argumentAtIndex:5] floatValue];
+      }
+
+      // view height
+      if ([command argumentAtIndex:6]) {
+        self.cameraViewController.viewHeight = (CGFloat)[[command argumentAtIndex:6] floatValue];
+      }
       
       NSLog(@"Test %@, width: %f, height: %f, barcodeFormats: %@",[command.arguments objectAtIndex:2], self.cameraViewController.scanAreaWidth, self.cameraViewController.scanAreaHeight, self.cameraViewController.barcodeFormats);
       

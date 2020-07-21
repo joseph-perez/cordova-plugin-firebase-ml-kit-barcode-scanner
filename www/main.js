@@ -80,7 +80,11 @@ function startScanning(p_OnSuccess, p_OnError, p_Settings) {
   var settingArray = [
     enabledDetectorTypes,
     p_Settings.detectorSize.width,
-    p_Settings.detectorSize.height
+    p_Settings.detectorSize.height,
+    p_Settings.viewPositionX,
+    p_Settings.viewPositionY,
+    p_Settings.viewWidth,
+    p_Settings.viewHeight,
   ];
 
   
